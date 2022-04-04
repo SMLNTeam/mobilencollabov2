@@ -4,4 +4,6 @@ from . import views
 
 urlpatterns = [
     path("", views.Index, name='index'),
+    path("drawing/canvas", views.Canvas, name='canvas'),
+
 ]
