@@ -1,13 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEST</title>
-</head>
-<body>
-    <h1>HI</h1>
-    <div id="tui-image-editor"></div>
-</body>
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Image</title>
+        <link
+        rel="stylesheet"
+        href="{% static 'drawing/css/canvas.css'%}"
+      />
+      
+      <script type="text/javascript" src="https://uicdn.toast.com/tui.code-snippet/v1.5.0/tui-code-snippet.min.js"></script>
+  
+      <script src="https://uicdn.toast.com/tui-image-editor/latest/tui-image-editor.js"></script>
+      
+     
+    </head>
+    <body>
+
+        <div id="tui-image-editor">
+            
+        </div>
+        <script  src={% static 'drawing/js/base.js'%}></script>
+        <script>
+            setTimeout(() => {
+                editor.loadImageFromURL("{% static 'drawing/img/test.jpg' %}",'lena').then(result => {
+        console.log('old : ' + result.oldWidth + ', ' + result.oldHeight);
+        console.log('new : ' + result.newWidth + ', ' + result.newHeight);
+        });
+               }, 1000)
+               
+        </script>
+        <input type="button" onclick=""/>
+
+    </body>
 </html>

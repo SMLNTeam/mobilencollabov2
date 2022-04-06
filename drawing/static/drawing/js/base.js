@@ -1,9 +1,9 @@
-const ImageEditor = require('tui-image-editor');
-const instance = new ImageEditor(document.querySelector('#tui-image-editor'), {
-  cssMaxWidth: 700,
-  cssMaxHeight: 500,
-  selectionStyle: {
-    cornerSize: 20,
-    rotatingPointOffset: 70,
-  },
+//const ImageEditor = require("tui-image-editor");
+var editor = new tui.ImageEditor('#tui-image-editor', {
+
+  cssMaxWidth: 7000,
+  cssMaxHeight: 1000,
+  usageStatistics: false,
+
 });
+
