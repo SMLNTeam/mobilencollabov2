@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "```sh # 0. clone fork project git clone https://github.com/Yourname/MobileNCollabo.git",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,4 +28,5 @@
   "dependencies": {
     "tui-image-editor": "^3.15.2"
   }
+ 
 }

@@ -1,3 +1,4 @@
+
 {% load static %}
 <html>
     <head>
@@ -6,11 +7,13 @@
         <link
         rel="stylesheet"
         href="{% static 'drawing/css/canvas.css'%}"
-      />
-      
-      <script type="text/javascript" src="https://uicdn.toast.com/tui.code-snippet/v1.5.0/tui-code-snippet.min.js"></script>
-  
-      <script src="https://uicdn.toast.com/tui-image-editor/latest/tui-image-editor.js"></script>
+        />
+
+        <script type="text/javascript" src="https://uicdn.toast.com/tui.code-snippet/v1.5.0/tui-code-snippet.min.js"></script>
+
+        <script src="https://uicdn.toast.com/tui-image-editor/latest/tui-image-editor.js"></script>
+
+   
       
      
     </head>
@@ -19,17 +22,18 @@
         <div id="tui-image-editor">
             
         </div>
-        <script  src={% static 'drawing/js/base.js'%}></script>
-        <script>
-            setTimeout(() => {
-                editor.loadImageFromURL("{% static 'drawing/img/test.jpg' %}",'lena').then(result => {
-        console.log('old : ' + result.oldWidth + ', ' + result.oldHeight);
-        console.log('new : ' + result.newWidth + ', ' + result.newHeight);
-        });
-               }, 1000)
-               
-        </script>
-        <input type="button" onclick=""/>
-
+ 
+        
+        <script  src={% static 'drawing/js/base.js'%}>
+        </script>         
+            
+        
+        
+        
+        <button onClick='addShape_triangle()'>add triangle</button>
+        <button onClick='addShape_circle()'>add circle</button>
+        <button onClick='addIcon_arrow()'>add arrow</button>
+        <button onClick='addText()'>add text</button>
+        <button onClick="addShape_rect()">add rect</button>
     </body>
 </html>
