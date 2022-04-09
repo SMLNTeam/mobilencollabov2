@@ -1,11 +1,8 @@
 var editor = new tui.ImageEditor('#tui-image-editor', {
-
-    cssMaxWidth: 500,
-    cssMaxHeight: 700,
-    usageStatistics: false,
-    
-  });
-
+  cssMaxWidth: 1000,
+  cssMaxHeight: 500,
+  usageStatistics: false,  
+});
 
 
 /*
@@ -13,44 +10,32 @@ var editor = new tui.ImageEditor('#tui-image-editor', {
   
  }, 1000);
  */
- function addIcon_arrow(){  
-  editor.addIcon('arrow');
+function loadImage_file(){
+  var file = document.querySelector('#il');
+  editor.loadImageFromFile(file.files[0]).then(result => {
+    console.log('old : ' + result.oldWidth + ', ' + result.oldHeight);
+    console.log('new : ' + result.newWidth + ', ' + result.newHeight);
+  });
+  const imgEditor = document.querySelector('#tui-image-editor'); //tui-image-editor wrap
+  const canvas = document.querySelector('.lower-canvas'); //lower-canvas or upper-canvas
+  console.dir(canvas);
+
+  let canvasWidth;
+  let canvasHeight;
+  setTimeout(() => {
+    canvasWidth = canvas.style.maxWidth;
+    canvasHeight = canvas.style.maxHeight;
+    //console.log(canvasWidth);
+    //console.log(canvasHeight);
+    imgEditor.setAttribute('style', `width:${canvasWidth}; height:${canvasHeight};`);
+  }, 10);
 }
 
-function addShape_rect(){  
-  console.log("rect");
-  editor.addShape('rect', {
-    stroke: 'black',
-    strokeWidth: 3,
-    width: 50,
-    height: 50,
-    left: 140,
-    top: 70,
-    isRegular: false
-});
-}
-function addShape_circle(){  
-  editor.addShape('circle', {
-    
-    stroke: 'black',
-    strokeWidth: 3,
-    rx: 30,
-    ry: 30,
-    isRegular: false
-});
-}
-function addShape_triangle(){  
-  editor.addShape('triangle', {
+function applyFilter(){
+  editor.applyFilter('Grayscale');
+} //이미지가 로드 되어야 함.
 
-    stroke: 'black',
-    strokeWidth: 3,
-    width: 50,
-    height: 50,
-    left: 140,
-    top: 70,
-    isRegular: false
-});
-}
+//--------------------------------
 function addText(){
   editor.addText('abcd', {
     styles: {
@@ -65,5 +50,5 @@ function addText(){
 }).then(objectProps => {
     console.log(objectProps.id);
 });
-}
+}//텍스트 추가
 

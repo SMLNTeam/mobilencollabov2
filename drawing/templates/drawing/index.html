@@ -3,37 +3,41 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Image</title>
-        <link
-        rel="stylesheet"
-        href="{% static 'drawing/css/canvas.css'%}"
-        />
-
+        <title>Image Editor</title>
+        <link rel="stylesheet" href="https://uicdn.toast.com/tui-image-editor/latest/tui-image-editor.css"/>
+        <link rel="stylesheet" href="{% static 'drawing/css/canvas.css'%}"/>
         <script type="text/javascript" src="https://uicdn.toast.com/tui.code-snippet/v1.5.0/tui-code-snippet.min.js"></script>
-
         <script src="https://uicdn.toast.com/tui-image-editor/latest/tui-image-editor.js"></script>
-
-   
-      
-     
+        <style>
+            html,
+            body {
+              height: 100%;
+              margin: 0;
+            }
+        </style>
     </head>
     <body>
+        <div id="tui-image-editor"></div>
+        <script src="{% static 'drawing/js/base.js'%}"></script>
+        <script src="{% static 'drawing/js/addIcon.js'%}"></script>
+        <script src="{% static 'drawing/js/addShape.js'%}"></script>
 
-        <div id="tui-image-editor">
-            
+        <div class="addShape">
+            <button onClick='addShape_triangle()'>add triangle</button>
+            <button onClick='addShape_circle()'>add circle</button>
+            <button onClick="addShape_rect()">add rect</button>
         </div>
- 
-        
-        <script  src={% static 'drawing/js/base.js'%}>
-        </script>         
-            
-        
-        
-        
-        <button onClick='addShape_triangle()'>add triangle</button>
-        <button onClick='addShape_circle()'>add circle</button>
-        <button onClick='addIcon_arrow()'>add arrow</button>
-        <button onClick='addText()'>add text</button>
-        <button onClick="addShape_rect()">add rect</button>
+        <div class="addIcon">
+            <button onClick='addIcon_arrow()'>add arrow</button>
+            <button onClick='addIcon_cancel()'>add cancel</button>
+            <button onClick='addText()'>add text</button>
+        </div>
+        <div class="image">
+            <input type="file" id="il"></input>
+            <button onClick="loadImage_file()">load</button>
+        </div>
+        <div>
+            <button onClick="applyFilter()">Filter</button>
+        </div>
     </body>
 </html>
