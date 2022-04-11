@@ -1,0 +1,61 @@
+ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+li.material-icons {
+    list-style-type: none;
+    margin: 0px;
+    padding: 20px;
+    width: 20px;
+    height: 20px;
+    background: #F3D7D8;
+}
+
+.necessary {
+    list-style-type: none;
+}
+
+i {
+    color: rgb(0, 0, 0);
+}
+
+
+.box {
+    border:0px solid;
+    width: 1080px;
+    height: 464.4px;
+    background: rgb(255, 255, 255);
+}
+
+.center {
+    align-items: center;
+    justify-content: center;
+}
+
+.login {
+    width: 130px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    background: white;
+    border-radius: 10px;
+}
+
+.top {
+    display: grid;
+    grid-template-columns: 7fr 1fr;
+}
+
+.logo {
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.swiper {
+    width: 2000px;
+    height: 360px;
+}

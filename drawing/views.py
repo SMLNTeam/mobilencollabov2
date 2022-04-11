@@ -4,5 +4,8 @@ from django.shortcuts import render
 def Index(request):
     return render(request, 'drawing/index.html')
 
+def Index2(request):
+    return render(request, 'drawing/home.html')
+
 def Canvas(request):
     return render(request,'drawing/canvas.html')

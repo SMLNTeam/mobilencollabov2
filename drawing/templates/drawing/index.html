@@ -18,17 +18,19 @@
     </head>
     <body>
         <div id="tui-image-editor"></div>
-        <script src="{% static 'drawing/js/base.js'%}"></script>
-        <script src="{% static 'drawing/js/addIcon.js'%}"></script>
-        <script src="{% static 'drawing/js/addShape.js'%}"></script>
-
         <div class="addShape">
             <button onClick='addShape_triangle()'>add triangle</button>
             <button onClick='addShape_circle()'>add circle</button>
             <button onClick="addShape_rect()">add rect</button>
+            <div class="container">
+                <input type="color" id="color-picker" name="color-picker" value="#e66465">
+                <label for="color-picker">Color</label>
+            </div>
+            <button onClick="changeIconColor()">color</button>
         </div>
         <div class="addIcon">
             <button onClick='addIcon_arrow()'>add arrow</button>
+            <button onClick='addIcon_arrow2()'>add arrow2</button>
             <button onClick='addIcon_cancel()'>add cancel</button>
             <button onClick='addText()'>add text</button>
         </div>
@@ -39,5 +41,18 @@
         <div>
             <button onClick="applyFilter()">Filter</button>
         </div>
+        <ul class="menu">
+            <li class="menu-item">
+                <div id="tui-icon-color-picker">Icon color</div>
+            </li>
+            <li class="menu-item border" id="btn-register-icon">Register custom icon</li>
+            <li class="menu-item icon-text" data-icon-type="arrow">➡</li>
+            <li class="menu-item icon-text" data-icon-type="cancel">✖</li>
+            <li class="menu-item close">Close</li>
+        </ul>
+        <script src="{% static 'drawing/js/base.js'%}"></script>
+        <script src="{% static 'drawing/js/addIcon.js'%}"></script>
+        <script src="{% static 'drawing/js/addShape.js'%}"></script>
+        <script src="{% static 'drawing/js/image.js'%}"></script>
     </body>
 </html>
