@@ -5,7 +5,7 @@ def Index(request):
     return render(request, 'drawing/index.html')
 
 def Index2(request):
-    return render(request, 'drawing/home.html')
+    return render(request, 'drawing/base.html')
 
 def Canvas(request):
     return render(request,'drawing/canvas.html')

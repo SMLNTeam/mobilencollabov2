@@ -1,11 +1,47 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Editor</title>
+    <title>SMLN image editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Exo', sans-serif;
+        }
+        body{
+            min-width: 786px;
+        }
+    </style>
+    {% block head %}
+    {% endblock head %}
+    <script src="https://kit.fontawesome.com/ba2e782af5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'drawing/css/home.css' %}">
+    <link
+        type="text/css"
+        href="https://uicdn.toast.com/tui-color-picker/v2.2.6/tui-color-picker.css"
+        rel="stylesheet"
+    />
+    <link type="text/css" href="{% static 'drawing/css/service-basic.css' %}" rel="stylesheet" />
 </head>
-<body>
+
+<body bgcolor = "#393939" style="margin:0px;">
+    <header>
+        <div class="top">
+            <div class="top-logo"><a href="#smln"><img src="{% static 'drawing/img/SMLN_logo.jpg' %}"></a></div>
+            <div>
+                <ul class="top-menu">
+                    <li class="edit"><a href="#edit">Go! Image Editor!</a></li>
+                    <li><a href="#signup">회원가입</a></li>
+                    <li><a href="#login">로그인</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    {% block body %}
+    {% endblock body %}
 </body>
 </html>

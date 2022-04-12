@@ -1,11 +1,41 @@
-.border {
-  border: 1px solid black;
-}
+
 .body-container {
-  width: 1000px;
+  width: 100%;
 }
 .tui-image-editor-controls {
+  display: block;
+  width: 100%;
   min-height: 250px;
+}
+.menu-container{
+  height: 82px;
+  display: flex;
+}
+#menu-container-1{
+  justify-content: right;
+}
+#menu-container-1 .border {
+  border-radius: 30px;
+  border: 3px solid;
+  border-color: grey;
+}
+#menu-container-2{
+  border-radius: 10px;
+  border:3px solid;
+  border-color: grey;
+  margin: 0px 100px;
+  padding: 20px 0px;
+  height: auto;
+  justify-content: center;
+  align-items: center ;
+  background-color: pink;
+}
+#menu-container-2>ul{
+  margin: 0px;
+}
+#menu-container-2>ul>li{
+  margin: 3px 3px;
+  border-radius: 10px;
 }
 .menu {
   padding: 0;
@@ -39,6 +69,7 @@
   display: inline-block;
   cursor: pointer;
   vertical-align: middle;
+  background-color: white;
 }
 .menu-item a {
   text-decoration: none;
