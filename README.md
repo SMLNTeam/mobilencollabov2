@@ -2,7 +2,7 @@
 
 ```sh
 # 0. clone fork project
-git clone https://github.com/Yourname/MobileNCollabo.git
+git clone https://github.com/Yourname/mobilencollabov2.git
 
 # 1. virtual environment setup
 python -m venv venv
