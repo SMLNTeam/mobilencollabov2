@@ -69,6 +69,7 @@ header {
 }
 
 .top-menu li {
+    padding: 5px;
     list-style-type: none;
     float: left;
 }
@@ -82,7 +83,58 @@ header {
 
 @keyframes blink-effect { 50% { opacity: 0; } }
 
+#index-center{
+    display: block;
+    position: relative;
+    margin-top: 10px 0;
+    height: 300px;
+}
+
+#index-center-1{
+    display: block;
+    position: absolute;
+    width: 100%;
+    margin-top: 100px;
+}
+
+#btn-editor{
+    margin: 20px 0;
+    width: 410px;
+    height: 50px;
+    background-color: pink;
+    color: white;;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#btn-editor:hover{
+    background-color: #B7B3E0;
+}
+
+#index-center-1-typo{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+#index-center-2{
+    display: block;
+    width: 100%;
+}
+
+#formElement{
+    width: 400px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 3px solid grey;
+}
+
 .edit {
+    background-color: pink;
+    border-radius: 30px;
     animation: blink-effect 1s step-end infinite;
 }
 

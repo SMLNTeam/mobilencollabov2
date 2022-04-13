@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMLN image editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Exo', sans-serif;
+        }
+        body{
+            min-width: 786px;
+        }
+    </style>
+    {% block head %}
+    {% endblock head %}
+    <script src="https://kit.fontawesome.com/ba2e782af5.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/typeit@8.4.0/dist/index.umd.js"></script>
+    <link rel="stylesheet" href="{% static 'drawing/css/home.css' %}">
+    <title>SMLN Image Editor</title>
+</head>
+<body bgcolor = "#393939" style="margin:0px;">
+    <header>
+        <div class="top">
+            <div class="top-logo"><a href="#smln"><img src="{% static 'drawing/img/SMLN_logo.jpg' %}"></a></div>
+            <div>
+                <ul class="top-menu">
+                    <li><a href="#signup">회원가입</a></li>
+                    <li><a href="#login">로그인</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section id="index-center">
+        <div id="index-center-1">
+            <p id="index-center-1-typo"></p>
+        </div>
+    </section>
+    <section id="index-center">
+        <div id="index-center-2" style="text-align: center;">
+            <form id="formElement-container">
+                <input type="text" id="formElement"/>
+            </form>
+            <button id="btn-editor">Go! Image Editor</button>
+        </div>
+    </section>
+    <script src="{% static 'drawing/js/index.js' %}"></script>  
+</body>
+</html>
