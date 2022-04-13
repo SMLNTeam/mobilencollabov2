@@ -1,11 +1,8 @@
 from django.shortcuts import render
-
+from django.views.generic import TemplateView
 # Create your views here.
-def Index(request):
-    return render(request, 'drawing/index.html')
+class IndexView(TemplateView):
+    template_name = 'drawing/base.html'
 
-def Index2(request):
-    return render(request, 'drawing/base.html')
-
-def Canvas(request):
-    return render(request,'drawing/canvas.html')
+class EditorView(TemplateView):
+    template_name = 'drawing/editor.html'
