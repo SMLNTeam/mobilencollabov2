@@ -29,11 +29,16 @@
 <body bgcolor = "#393939" style="margin:0px;">
     <header>
         <div class="top">
-            <div class="top-logo"><a href="#smln"><img src="{% static 'drawing/img/SMLN_logo.jpg' %}"></a></div>
+            <div class="top-logo"><a href=""><img src="{% static 'drawing/img/SMLN_logo.jpg' %}"></a></div>
             <div>
                 <ul class="top-menu">
-                    <li><a href="#signup">회원가입</a></li>
-                    <li><a href="#login">로그인</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'account_change_password' %}">안녕하세요, {{user}}님!</a></li>
+                    <li><a href="logout">로그아웃</a></li>
+                    {% else %}
+                    <li><a href="signup">회원가입</a></li>
+                    <li><a href="login">로그인</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
@@ -48,7 +53,16 @@
             <form id="formElement-container">
                 <input type="text" id="formElement"/>
             </form>
-            <button id="btn-editor">Go! Image Editor</button>
+            {% if user.is_authenticated %}
+            <a href="editor">
+                <button id="btn-editor" >Go! Image Editor</button>
+           </a>
+            {% else %}
+            <a href="login">
+                 <button id="btn-editor" >Go! Image Editor</button>
+            </a>
+           
+            {% endif %}
         </div>
     </section>
     <script src="{% static 'drawing/js/index.js' %}"></script>  

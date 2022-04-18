@@ -31,12 +31,12 @@
 <body bgcolor = "#393939" style="margin:0px;">
     <header>
         <div class="top">
-            <div class="top-logo"><a href="#smln"><img src="{% static 'drawing/img/SMLN_logo.jpg' %}"></a></div>
+            <div class="top-logo"><a href="index"><img src="{% static 'drawing/img/SMLN_logo.jpg' %}"></a></div>
             <div>
                 <ul class="top-menu">
-                    <li class="edit"><a href="#edit">Go! Image Editor!</a></li>
-                    <li><a href="#signup">회원가입</a></li>
-                    <li><a href="#login">로그인</a></li>
+                    <li class="edit"><a href="editor">New Image Editor!</a></li>
+                    <li><a href=''>{{user}}님!</a></li>
+                    <li><a href="logout">로그아웃</a></li>
                 </ul>
             </div>
         </div>

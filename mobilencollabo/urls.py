@@ -15,10 +15,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import TemplateView
+from drawing.views import CustomPasswordChangeView
 
 urlpatterns = [
     #admin
     path('admin/', admin.site.urls),
     #drawing
     path("", include('drawing.urls')),
+    #allauth.urls
+    path(
+        "email-confirmation-done/", 
+        TemplateView.as_view(template_name='drawing/email_confirmation_done.html'), 
+        name="account_email_confirmation_done",
+    ),
+    path(
+        "password/change/",
+        CustomPasswordChangeView.as_view(),
+         name="account_password_change",
+    ),
+    path('', include('allauth.urls')),
 ]
