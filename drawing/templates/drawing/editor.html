@@ -6,29 +6,40 @@
   <div class="tui-image-editor-controls">
     <div class="menu-container" id="menu-container-1">
       <ul class="menu">
-        <li class="menu-item border input-wrapper" style="margin-right:20px; background-color: white  ;">
-          Image Load
+        <li class="menu-item2  input-wrapper">
           <input type="file" accept="image/*" id="input-image-file" />
+          <i style="color: white; font-size:30px;" class="fa-solid fa-upload"><div style="display:inline-block; font-size:18px;">Upload</div>
+           
+          </i>
         </li>
-        <li class="menu-item border" id="btn-download" style="margin-right:100px; background-color: pink; color: white;">Download</li>
+        <li class="menu-item2 border" id="btn-download" >
+          <i style="color: white; font-size:30px;" class="fa-solid fa-download"><div style="display:inline-block; font-size:18px;"> Download</div>
+          </i></li>
       </ul>
     </div>
     <div class="menu-container" id="menu-container-2">
-      <ul class="menu">
-        <li class="menu-item disabled" id="btn-undo"><i class="fa-solid fa-arrow-rotate-left"></i></li>
-        <li class="menu-item disabled" id="btn-redo"><i class="fa-solid fa-arrow-rotate-right"></i></li>
-        <li class="menu-item close" id="btn-hand"><i class="fa-solid fa-hand"> 손</i></li>
-        <li class="menu-item" id="btn-clear-objects"><i class="fa-solid fa-eraser"> 모두 삭제</i></li>
-        <li class="menu-item" id="btn-remove-active-object"><i class="fa-solid fa-eraser"> 선택 삭제</i></li>
-        <li class="menu-item" id="btn-crop"><i class="fa-solid fa-crop"> 자르기</i></li>
-        <li class="menu-item" id="btn-flip"><i class="fa-solid">뒤집기</i></li>
-        <li class="menu-item" id="btn-rotation"><i class="fa-solid fa-rotate"> 회전</i></li>
-        <li class="menu-item" style="background-color: #B7B3E0;" id="btn-draw-line"><i style="color: white;" class="fa-solid fa-paintbrush"> 그리기</i></li>
-        <li class="menu-item" style="background-color: #B7B3E0;" id="btn-draw-shape"><i style="color: white;" class="fa-solid fa-shapes"> 도형</i></li>
-        <li class="menu-item" style="background-color: #B7B3E0;" id="btn-add-icon"><i style="color: white;" class="fa-solid fa-icons"> 아이콘</i></li>
-        <li class="menu-item" style="background-color: #B7B3E0;" id="btn-text"><i style="color: white;" class="fa-solid fa-font"> 텍스트</i></li>
-        <li class="menu-item" style="background-color: #B7B3E0;" id="btn-mask-filter"><i style="color: white;" class="fa-solid fa-image "> 이미지</i></li>
-        <li class="menu-item" style="background-color: #B7B3E0;" id="btn-image-filter"><i style="color: white;" class="fa-solid fa-filter"> 필터</i></li>
+      <ul id="main_menu">
+       
+        <li class="menu-item2 disabled" id="btn-undo"><i style="color: white;" class="fa-solid fa-arrow-rotate-left"></i></li>
+        <li class="menu-item2 disabled" id="btn-redo"><i style="color: white;" class="fa-solid fa-arrow-rotate-right"></i></li>
+        <li class="menu-item2 close" id="btn-hand"><i style="color: white;" class="fa-solid fa-hand"> <span>손</span></i>
+        </li>
+        <li class="menu-item2" id="btn-clear-objects"><i style="color: white;"class="fa-solid fa-eraser"> <span>모두 삭제</span></i></li>
+        <li class="menu-item2" id="btn-remove-active-object"><i style="color: white;" class="fa-solid fa-eraser"> <span>선택 삭제</span></i></li>
+        <li class="menu-item2" id="btn-crop"><i style="color: white;" class="fa-solid fa-crop"> <span>자르기</span></i></li>
+        <li class="menu-item2" id="btn-flip">
+          <i style="color: white; font-size:21px;" class="material-symbols-outlined">
+            flip<span>뒤집기</span>
+          </i>
+        </li>
+        <li class="menu-item2" id="btn-rotation"><i style="color:white;" class="fa fa-thin fa-rotate"><span>회전</span></i></li>
+        <li class="menu-item2"  id="btn-draw-line"><i style="color: white;" class="fa-solid fa-paintbrush"> <span>그리기</span></i></li>
+        <li class="menu-item2"  id="btn-draw-shape"><i style="color: white;" class="fa-solid fa-shapes"> <span>도형</span></i></li>
+        <li class="menu-item2"  id="btn-add-icon"><i style="color: white;" class="fa-solid fa-icons"> <span>아이콘</span></i></li>
+        <li class="menu-item2"  id="btn-text"><i style="color: white;" class="fa-solid fa-font"> <span>텍스트</span></i></li>
+        <li class="menu-item2"  id="btn-mask-filter"><i style="color: white;" class="fa-solid fa-image "> <span>이미지</span></i></li>
+        <li class="menu-item2" id="btn-image-filter"><i style="color: white;" class="fa-solid fa-filter"> <span>필터</span></i></li>
+        
       </ul>
     </div>
     <div class="sub-menu-container" id="crop-sub-menu">
@@ -345,34 +356,35 @@
     </div>
   </div>
   <div class="tui-image-editor" style="margin-bottom: 140px; margin-top:50px;"></div>
-</div>
-<script type="module">
+  </div>
+  <script type="module">
   setTimeout(() => {
     imageEditor.loadImageFromURL("{% static 'drawing/img/initImage.png' %}", 'initImage').then(function () {
       imageEditor.clearUndoStack();
     });
   },10);
-</script>
-<script
+  </script>
+  <script
   type="text/javascript"
   src="https://api-storage.cloud.toast.com/v1/AUTH_e18353c4ea5746c097143946d0644e61/toast-ui-cdn/tui-image-editor/v3.11.0/example/fabric-v4.2.0.js"
-></script>
-<script
+  ></script>
+  <script
   type="text/javascript"
   src="https://uicdn.toast.com/tui.code-snippet/v1.5.0/tui-code-snippet.min.js"
-></script>
-<script
+  ></script>
+  <script
   type="text/javascript"
   src="https://uicdn.toast.com/tui-color-picker/v2.2.6/tui-color-picker.min.js"
-></script>
-<script
+  ></script>
+  <script
   type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"
-></script>
-<script
+  ></script>
+  <script
   type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js"
-></script>
-<script type="text/javascript" src="{% static 'drawing/dist/tui-image-editor.js' %}"></script>
-<script src="{% static 'drawing/js/service-basic.js' %}"></script>
+  ></script>
+  <script type="text/javascript" src="{% static 'drawing/dist/tui-image-editor.js' %}"></script>
+  <script src="{% static 'drawing/js/service-basic.js' %}"></script>
+  
 {% endblock body %}
