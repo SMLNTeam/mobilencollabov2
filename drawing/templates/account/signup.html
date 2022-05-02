@@ -1,54 +1,79 @@
-{% extends "drawing_base/base.html" %}
 
 {% load static %}
 {% load widget_tweaks %}
-{% block title %}SMLN | 회원가입{% endblock title %}
 
-{% block content %}
-<div class="account-background">
-  <main class="account">
-    <div class="title">
-      <a href="{% url 'index' %}">
-        <img class="top-logo" src="{% static 'drawing/img/SMLN_logo.jpg' %}" alt="Coplate Logo">
-      </a>
-    </div>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>SMLN | 회원가입</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@200&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Exo', sans-serif;
+        }
+</style>
+    <script src="https://kit.fontawesome.com/ba2e782af5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'drawing/styles/theme.css' %}">
+    <link rel="stylesheet" href="{% static 'drawing/css/page.css' %}">
+</head>
 
-    <form method="post">
-      {% csrf_token %}
 
-      <div>
-        {{ form.username|add_class:"cp-input"|attr:"placeholder:닉네임 (Coplate에서 사용되는 이름입니다)"|add_error_class:"error" }}
-        {% for error in form.username.errors %}
-          <div class="error-message">{{ error }}</div>
-        {% endfor %}
-      </div> 
 
-      <div>
-        {{ form.email|add_class:"cp-input"|attr:"placeholder: 이메일"|add_error_class:"error"}}
-        {% for error in form.email.errors %}
-        <div class="error-message">{{ error }}</div>
-      {% endfor %}
+<body bgcolor = "#393939" style="margin:0px;">
+  <header>
+      <div class="top">
+        <div class="logo"><a href="{% url 'index' %}"><img src="{% static 'drawing/img/SMLN_마크2.jpg' %}"></a></div>
+      </div>
+  </header>
+
+  <div class="signup-form">
+    <main class="account">
+      <div class="title">
+        <h1 class="title" style="color: #F3D7D8;">회원가입</h1>
+
       </div>
   
-      <div>
-        {{ form.password1|add_class:"cp-input"|attr:"placeholder:비밀번호"|add_error_class:"error"}}
-        {% for error in form.password1.errors %}
-        <div class="error-message">{{ error }}</div>
-      {% endfor %}
-      </div>
-      
-      <div>
-        {{ form.password2|add_class:"cp-input"|attr:"placeholder:비밀번호확인"|add_error_class:"error"}}
-        {% for error in form.password2.errors %}
-        <div class="error-message">{{ error }}</div>
-      {% endfor %}
-      </div>
-      <button class="cp-button" type="submit">회원가입</button>
-    </form>
+      <form method="post">
+        {% csrf_token %}
+  
+        <div>
+          {{ form.username|add_class:"cp-input"|attr:"placeholder:닉네임"|add_error_class:"error" }}
+          {% for error in form.username.errors %}
+            <div class="error-message">{{ error }}</div>
+          {% endfor %}
+        </div> 
 
-    <div class="info">
-      이미 회원이신가요?<a class="link" href="{% url 'account_login' %}">로그인</a>
-    </div>
-  </main>
-</div>
-{% endblock content %}
+        <div>
+          {{ form.email|add_class:"cp-input"|attr:"placeholder: 이메일"|add_error_class:"error"}}
+          {% for error in form.email.errors %}
+          <div class="error-message">{{ error }}</div>
+        {% endfor %}
+        </div>
+
+        <div>
+          {{ form.password1|add_class:"cp-input"|attr:"placeholder:비밀번호"|add_error_class:"error"}}
+          {% for error in form.password1.errors %}
+          <div class="error-message">{{ error }}</div>
+        {% endfor %}
+        </div>
+
+        <div>
+          {{ form.password2|add_class:"cp-input"|attr:"placeholder:비밀번호확인"|add_error_class:"error"}}
+          {% for error in form.password2.errors %}
+          <div class="error-message">{{ error }}</div>
+        {% endfor %}
+        </div>
+        <button class="gosign" type="submit">회원가입</button>
+      </form>
+  
+      <div>
+        <h3 class="list">이미 회원이신가요?  <a style = "color:white" href="{% url 'account_login' %}">로그인</a></h3>
+      </div>
+    </main>
+  </div>
+  
+</body>
+</html>

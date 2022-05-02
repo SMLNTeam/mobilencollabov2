@@ -1,46 +1,73 @@
-{% extends "drawing_base/base.html" %}
-
 {% load static %}
 {% load widget_tweaks %}
-
-{% block title %}SMLN | 로그인{% endblock title %}
-
-{% block content %}
-<div class="account-background">
-  <main class="account">
-    <div class="title">
-      <a href="{% url 'index' %}">
-        <img class="logo" src="{% static 'drawing/img/SMLN_logo.jpg' %}" alt="Coplate Logo">
-      </a>
-    </div>
-
-    <form method="post">
-      {% csrf_token %}
-      
-      {% for error in form.non_field_errors %}
-        <div class="form-error error-message">{{error}}</div>
-      {% endfor %}
-
-      <div>
-        {{ form.login|add_class:"cp-input"|attr:"placeholder: 닉네임"|add_error_class:"error"}}
-        {% for error in form.login.errors %}
-        <div class="form-error error-message">{{error}}</div>
-      {% endfor %}
-      </div>
-      
-      <div>
-        {{ form.password|add_class:"cp-input"|attr:"placeholder: 비밀번호"|add_error_class:"error"}}
-        {% for error in form.password.errors %}
-        <div class="form-error error-message">{{error}}</div>
-      {% endfor %}
-      </div>
-      <button class="cp-button" type="submit">로그인</button>
-    </form>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
     
-    <div class="info">
-      <a class="item" href="{% url 'account_reset_password' %}">비밀번호 찾기</a>
-      <a class="item" href="{% url 'account_signup' %}">회원가입</a>
-    </div>
-  </main>
-</div>
-{% endblock content %}
+    <title>SMLN | 로그인</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@200&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Exo', sans-serif;
+        }
+</style>
+    <script src="https://kit.fontawesome.com/ba2e782af5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'drawing/styles/theme.css' %}">
+    <link rel="stylesheet" href="{% static 'drawing/css/page.css' %}">
+</head>
+
+<body bgcolor = "#393939" style="margin:0px;">
+  <header>
+      <div class="top">
+          <div class="logo"><a href="{% url 'index' %}"><img src="{% static 'drawing/img/SMLN_마크2.jpg' %}"></a></div>
+      </div>
+  </header>
+
+  <div class="login-form">
+      <h1 class="title" style="color: white;">LOGIN</h1>
+      <form method="post">
+        {% csrf_token %}
+        
+        {% for error in form.non_field_errors %}
+          <div class="form-error error-message">{{error}}</div>
+        {% endfor %}
+  <p>
+        <div>
+          {{ form.login|add_class:"cp-input"|attr:"placeholder: 닉네임"|add_error_class:"error"}}
+          {% for error in form.login.errors %}
+          <div class="form-error error-message">{{error}}</div>
+        {% endfor %}
+        </div>
+        <p>
+        <div>
+          {{ form.password|add_class:"cp-input"|attr:"placeholder: 비밀번호"|add_error_class:"error"}}
+          {% for error in form.password.errors %}
+          <div class="form-error error-message">{{error}}</div>
+        {% endfor %}
+  
+        
+        </div>
+        <p>
+        <button class="gologin" type="submit">로그인</button>
+      </form>
+
+          <div class="login-form-button" style="display: flex; width: 324px;">
+              <div style="width: 162px; justify-content: space-between; display: block;"><a class="seek" href="{% url 'account_reset_password' %}">비밀번호 찾기</a></div>
+              <div style="width: 162px; justify-content: space-between; display: block;"><a class="signup" href="{% url 'account_signup' %}">회원가입</a></div>
+          </div>
+
+          <table align="center" height="0" width="324" border="1" style="border:solid 1px #ffffff; margin-top:5%">
+          </table>
+
+          <h2 style="color: white;">간편 로그인</h2>
+    <ul class="sign-button-list">
+      <li><button style="width: 324px; height: 40px; margin-bottom: 10px; border-radius: 5px;"><img src="{% static 'drawing/img/premium-icon-kakao-talk-3991999.png' %}" style="float: left; width:20px; height:20px;"><span>Kakao Talk</span></button></li>
+      <li><button style="width: 324px; height: 40px; margin-bottom: 10px; border-radius: 5px;"><img src="{% static 'drawing/img/free-icon-facebook-174848.png' %}" style="float: left; width:20px; height:20px;"><span>Facebook</span></button></li>
+              <li><button style="width: 324px; height: 40px; border-radius: 5px;"><img src="{% static 'drawing/img/free-icon-search-281764.png' %}" style="float: left; width:20px; height:20px;"><span>Google</span></button></li>
+    </ul>
+  </div>
+</body>
+</html>

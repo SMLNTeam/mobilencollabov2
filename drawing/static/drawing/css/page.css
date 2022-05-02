@@ -1,0 +1,326 @@
+ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+a {
+    color: black;
+    text-decoration-line: none;
+}
+
+li.material-icons {
+    list-style-type: none;
+    margin: 0px;
+    padding: 20px;
+    width: 20px;
+    height: 20px;
+    background: #F3D7D8;
+}
+
+.necessary {
+    list-style-type: none;
+}
+
+i {
+    color: rgb(0, 0, 0);
+}
+
+.box {
+    border: 0px solid;
+    width: 1080px;
+    height: 464.4px;
+    background: rgb(255, 255, 255);
+}
+
+.center {
+    align-items: center;
+    justify-content: center;
+}
+
+.login {
+    width: 130px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    background: white;
+    border-radius: 10px;
+}
+
+.top {
+    width: auto;
+    margin: 0 0 0 0;
+    height: 100px;
+}
+
+.logo {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: auto;
+    float: left;
+}
+
+header {
+    height: 100px;
+}
+
+.menu {
+    height: 20px;
+    float: right;
+    margin-right: 100px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.menu li {
+    list-style-type: none;
+    float: left;
+}
+
+.menu a {
+    color: white;
+    padding: 0 10px;
+    display: block;
+    text-decoration: none;
+}
+
+@keyframes blink-effect {
+    50% {
+        opacity: 0;
+    }
+}
+
+.edit {
+    animation: blink-effect 1s step-end infinite;
+}
+
+.login-form,
+.pwchange-form,
+.signup-form {
+    border: 0;
+    border-radius: 5px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 324px;
+    height: 160px;
+    margin-left: -150px;
+    margin-top: -80px;
+}
+
+.pwfound-form {
+    border: 0;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 324px;
+    height: 160px;
+    margin-left: -150px;
+    margin-top: -80px;
+}
+
+.text-field,
+#mobile.int {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 15px;
+    width: 300px;
+    margin-top: 10px;
+}
+
+.title {
+    margin: 0 0;
+}
+
+.seek,
+.signup {
+    border-radius: 5px;
+    background-color: #393939;
+    color: white;
+    font-size: 13px;
+}
+
+.gologin,
+.gochange,
+.goback,
+.gosign,
+.gopwfound,
+.gopwreset {
+    border-radius: 30px;
+    background-color: #F3D7D8;
+    width: 324px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.login-form-button {
+    margin-top: 15px;
+}
+
+.sign-button-list {
+    list-style-type: none;
+    margin-top: 10px;
+    padding: 0px;
+}
+
+#mail_Select {
+    border-radius: 5px;
+    margin-top: 10px;
+    height: 44px;
+    width: 105px;
+    padding: 0px;
+    border: 0px;
+}
+
+h3.list {
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+h3.list {
+    color: #F3D7D8;
+}
+
+.mail-check,
+.ps-com,
+.sign-com {
+    margin-top: 15%;
+    vertical-align: middle;
+    text-align: center;
+    color: white;
+}
+
+.gopw-mail,
+.gopwreset-com,
+.sign-mail {
+    margin: auto;
+    display: block;
+    border-radius: 30px;
+    background-color: #F3D7D8;
+    width: 324px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+
+/* account */
+
+.account-background {
+    flex-grow: 1;
+}
+
+.account-background::before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: url("../assets/main-fg.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+    opacity: 0.5;
+}
+
+.account {
+    margin: 200px auto;
+    max-width: 450px;
+    width: 100%;
+}
+
+.account .title {
+    margin: 24px auto;
+    text-align: center;
+}
+
+.account .logo {
+    width: 200px;
+}
+
+.account .form-error {
+    text-align: center;
+}
+
+.account .info {
+    width: max-content;
+    margin: 25px auto;
+}
+
+.account button[type="submit"] {
+    display: block;
+    width: 100%;
+    margin: 0;
+}
+
+.account .info .item {
+    display: inline-block;
+    min-width: 140px;
+    padding: 0 21px;
+}
+
+.account .info .item+.item {
+    border-left: 1px solid var(--border);
+}
+
+.account .info .link {
+    margin-left: 13px;
+    color: var(--account-link);
+}
+
+.account form {
+    display: flex;
+    flex-direction: column;
+}
+
+.account form> :not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.account form .checkbox {
+    padding: 4px;
+    text-align: right;
+}
+
+
+/* account-password */
+
+.account-password {
+    margin: 100px auto;
+    padding: 68px 150px;
+    max-width: 740px;
+    width: 100%;
+}
+
+.account-password .title {
+    margin: 24px auto;
+    text-align: center;
+}
+
+.account-password .heading {
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.account-password form> :not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.account-password button[type="submit"] {
+    display: block;
+    width: 100%;
+    margin: 20px 0 25px;
+}
+
+.account-password-dialog {
+    margin: 100px auto;
+    text-align: center;
+    width: 100%;
+}
+
+.account-password-dialog .button {
+    margin-top: 5px;
+}

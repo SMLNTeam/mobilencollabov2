@@ -192,14 +192,15 @@ div.cp-input {
 input.cp-input,
 textarea.cp-input,
 .cp-input input {
-    width: 100%;
-    font-size: 17px;
+    width: 300px;
+    font-size: 15px;
     letter-spacing: -0.3px;
-    padding: 16px 24px;
+    padding: 10px;
     border: 1px solid var(--input-border);
     background-color: var(--input-background);
     outline: none;
-    border-radius: 7px;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 
 input.cp-input:focus,
