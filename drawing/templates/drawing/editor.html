@@ -28,8 +28,8 @@
         <li class="menu-item2" id="btn-remove-active-object"><i style="color: white;" class="fa-solid fa-eraser"> <span>선택 삭제</span></i></li>
         <li class="menu-item2" id="btn-crop"><i style="color: white;" class="fa-solid fa-crop"> <span>자르기</span></i></li>
         <li class="menu-item2" id="btn-flip">
-          <i style="color: white; font-size:21px;" class="material-symbols-outlined">
-            flip<span>뒤집기</span>
+          <i style="color: white; font-size:19px; font-weight:bold;" class="material-symbols-outlined">
+            flip<span style="  font-weight:bold;  font-size:17px;">뒤집기</span>
           </i>
         </li>
         <li class="menu-item2" id="btn-rotation"><i style="color:white;" class="fa fa-thin fa-rotate"><span>회전</span></i></li>
@@ -360,13 +360,11 @@
   <script type="module">
 
   new Promise((resolve,reject)=>{
-    console.log('hello');
+    
     imageEditor.loadImageFromURL("{% static 'drawing/img/white.png' %}", 'white').then(function () {
       imageEditor.clearUndoStack();
     });
-  }).then(()=>{
-    console,log('then');
-  })
+  });
   </script>
   <script
   type="text/javascript"
