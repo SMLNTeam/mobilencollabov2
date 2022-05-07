@@ -146,11 +146,6 @@ header {
     border: 3px solid grey;
 }
 
-.edit {
-    background-color: pink;
-    border-radius: 30px;
-    animation: blink-effect 1s step-end infinite;
-}
 
 .login-form {
     width: 300px;
