@@ -24,17 +24,21 @@
     <script src="https://kit.fontawesome.com/ba2e782af5.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/typeit@8.4.0/dist/index.umd.js"></script>
     <link rel="stylesheet" href="{% static 'drawing/css/home.css' %}">
+    
+
+
     <title>SMLN Image Editor</title>
 </head>
 <body bgcolor = "#393939" style="margin:0px;">
     <header>
         <div class="top">
-
             <div class="top-logo"><a href="{% url 'index' %}"><img src="{% static 'drawing/img/SMLN_logo.jpg' %}"></a></div>
+
             <div>
                 <ul class="top-menu">
                     {% if user.is_authenticated %}
-                    <li><a href="{% url 'account_change_password' %}">안녕하세요, {{user}}님!</a></li>
+                    <li><a href="{% url 'account_change_password' %}" >안녕하세요, {{user}}님!</a></li>
+                    <img src="{{ user.profile_pic.url}}"  width='30' height='30' style="border-radius:16px; display: inline-block;">
                     <li><a href="logout">로그아웃</a></li>
                     {% else %}
                     <li><a href="signup">회원가입</a></li>
