@@ -7,18 +7,6 @@ li.material-icons {
     background: #F3D7D8;
 }
 
-
-/* Avatar */
-
-.cp-avatar {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: var(--avatar-placeholder);
-    background-size: cover;
-    background-position: center;
-}
-
 .necessary {
     list-style-type: none;
 }
@@ -146,7 +134,6 @@ header {
     border: 3px solid grey;
 }
 
-
 .login-form {
     width: 300px;
     border: 0;
@@ -172,4 +159,22 @@ body {
 footer {
     bottom: 0;
     color: white;
+}
+
+
+/* Avatar */
+
+.cp-avatar {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--avatar-placeholder);
+    background-size: cover;
+    background-position: center;
+}
+
+.cp-avatar.large {
+    width: 100px;
+    height: 100px;
 }

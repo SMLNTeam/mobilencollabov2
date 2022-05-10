@@ -24,7 +24,7 @@
     <script src="https://kit.fontawesome.com/ba2e782af5.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/typeit@8.4.0/dist/index.umd.js"></script>
     <link rel="stylesheet" href="{% static 'drawing/css/home.css' %}">
-    
+    <link rel="stylesheet" href="{% static 'drawing/css/page.css' %}">
 
 
     <title>SMLN Image Editor</title>
@@ -48,28 +48,23 @@
             </div>
         </div>
     </header>
-    <section id="index-center">
-        <div id="index-center-1">
-            <p id="index-center-1-typo"></p>
-        </div>
-    </section>
-    <section id="index-center">
-        <div id="index-center-2" style="text-align: center;">
-            <form id="formElement-container">
-                <input type="text" id="formElement"/>
-            </form>
-            {% if user.is_authenticated %}
-            <a href="editor">
-                <button id="btn-editor" >Go! Image Editor</button>
-           </a>
-            {% else %}
-            <a href="login">
-                 <button id="btn-editor" >Go! Image Editor</button>
-            </a>
-           
+
+
+
+        <h1 class="title" style="color: white;">Profile</h1>
+        
+
+        <div><img src="{{ user.profile_pic.url}}"  width='100' height='100' style="border-radius:16px; display: inline-block;" ></div>
+      
+        <h1 class="username">닉네임: {{ user}}</h1>
+            {% if user.intro %}
+            <div>
+              <p class="cp-chip intro">소개문구: {{ user.intro}}</p>
+            </div>
             {% endif %}
-        </div>
-    </section>
-    <script src="{% static 'drawing/js/index.js' %}"></script>  
+            <a href="{% url 'profile-update' %}"><button class="gologin" type="submit" >프로필 수정</button></a>
+            <a href="{% url 'account_change_password' %}"><button class="gologin" type="submit">비밀번호 변경</button></a>
+
+  
 </body>
 </html>

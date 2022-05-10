@@ -5,11 +5,6 @@ from .validators import validate_no_special_characters
 
 # Create your models here.
 class User(AbstractUser):
-    nickname = models.CharField(
-        max_length=15,
-        unique=True,
-        null = False,
-    )
 
     profile_pic = models.ImageField(
         default="default_profile_pic.jpg"

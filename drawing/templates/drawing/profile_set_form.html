@@ -1,0 +1,61 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>SMLN | 프로필설정</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@200&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Exo', sans-serif;
+        }
+</style>
+    <script src="https://kit.fontawesome.com/ba2e782af5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'drawing/styles/theme.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'drawing/styles/style.css' %}">
+    <link rel="stylesheet" href="{% static 'drawing/css/page.css' %}">
+</head>
+
+<body bgcolor = "#393939" style="margin:0px;">
+  <header>
+      <div class="top">
+          <div class="logo"><a href="{% url 'index' %}"><img src="{% static 'drawing/img/SMLN_마크2.jpg' %}"></a></div>
+      </div>
+  </header>
+
+  <div class="account-background">
+    <main class="profile-form">
+
+      <p class="welcome-message">
+        환영합니다! <strong>프로필</strong>을 작성해주세요
+      </p>
+      <form method="post" enctype="multipart/form-data" autocomplete="off">
+        {% csrf_token %}
+        <div class="profile">
+          <div class="profile-pic cp-avatar large" style="background-image: url('{{ user.profile_pic.url }}')"></div>
+          <div class="file">
+            {{ form.profile_pic }}
+          </div>
+        </div>
+
+        <div class="content">
+          {{ form.intro|add_class:"cp-input"|add_error_class:"error"|attr:"placeholder:자신을 소개해 주세요!" }}
+          {% for error in form.intro.errors %}
+            <div class="error-message">{{ error }}</div>
+          {% endfor %}
+        </div>
+        <div class="buttons">
+          <button class="cp-button" type="submit">완료</button>
+        </div>
+      </form>
+    </main>
+  </div>
+
+
+
+</body>
+</html>
