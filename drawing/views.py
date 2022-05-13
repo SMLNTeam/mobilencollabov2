@@ -1,10 +1,13 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
-from django.views.generic import DetailView, UpdateView
+from django.views.generic import (
+    CreateView,ListView,DetailView,UpdateView,DeleteView,RedirectView,TemplateView
+)
 from allauth.account.views import PasswordChangeView
 from django.urls import reverse
 from drawing.forms import ProfileForm
 from drawing.models import User
+from .models import Post
+from .forms import PostForm
 
 # Create your views here.
 class IndexView(TemplateView):
@@ -43,3 +46,49 @@ class ProfileUpdateView(UpdateView):
         return self.request.user
     def get_success_url(self):
         return reverse("profile")
+
+
+
+
+
+#post
+class IndexRedirectView(RedirectView):
+    pattern_name='post-list'
+    template_name = "posts/post_list.html"
+ 
+class PostListView(ListView):
+    model=Post
+    ordering=['-dt_created'] #정렬 최신순(-안붙일 경우 오래된 순)
+    paginate_by=6
+    template_name = "posts/post_list.html"
+
+class PostDetailView(DetailView):
+    model=Post
+    template_name = "posts/post_detail.html"
+
+class PostCreateView(CreateView):
+    model=Post
+    form_class=PostForm 
+    template_name = "posts/post_form.html"
+
+    def get_success_url(self):
+        return reverse('post-detail',kwargs={'pk':self.object.id})
+
+
+
+class PostUpdateView(UpdateView):
+    model=Post
+    form_class=PostForm
+    template_name = "posts/post_form.html"
+    def get_success_url(self) :
+        return reverse('post-detail',kwargs={'pk':self.object.id})
+
+class PostDeleteView(DeleteView):
+    model=Post
+    template_name = "posts/post_confirm_delete.html"
+
+    def get_success_url(self):
+        return reverse('post-list')
+
+def Canvas(request):
+    return render(request,'posts/canvas.html')

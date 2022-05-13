@@ -1,0 +1,62 @@
+{% extends '../drawing/base.html' %}
+{% load static %}
+
+{% block body %}
+    
+{% block css %}
+<link rel="stylesheet" href="{% static 'posts/css/post_form.css'%}">
+{% endblock css %}
+
+{% block post_header %}
+<div class="container">
+    <h1>글쓰기</h1>
+</div>
+{% endblock post_header %}
+
+{% block content %} 
+<form method='post' enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="submit">
+        <input type="submit" value="작성완료"> 
+    </div>
+    <div class="editor">
+        <p>{{form.title}}</p>
+        {% for error in form.title.errors %}
+            <p class="error">{{error}}</p>
+        {% endfor %}
+    
+        
+        <div class="file">
+            <div class="podo-input file-input">
+                {% if post.image %}
+                    <img class="file-thumb" src="{{ post.image.url }}">
+                {% endif %}
+                <div class="file-content">
+                    {{ form.image }}
+                </div>
+            </div>
+            {% for error in form.image.errors %}
+                <div class="error-message">{{ error }}</div>
+            {% endfor %}
+        </div>
+       
+       
+
+
+        <p>{{form.content}}</p>
+        {% for error in form.content.errors %}
+            <p class="error">{{error}}</p>
+        {% endfor %}
+          
+    </div>
+</form>
+<div class='btn_back'>
+    <a href="{%url 'post-list'%}">돌아가기</a>
+</div>
+{% endblock content %}   
+{% endblock body %}
+
+
+
+
+
