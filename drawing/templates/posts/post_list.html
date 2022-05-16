@@ -17,7 +17,7 @@
 {% if  page_obj.object_list%}
     <div class="list_start">
         {% for post in page_obj.object_list %}
-            <div class="total"><a href={% url 'post-detail' post.id %} style="text-decoration: none; color:black">   
+            <div class="total" style="border-radius: 10px;"><a href={% url 'post-detail' post.id %} style="text-decoration: none; color:black">   
                 <div class="list_detail_odd"><img style="width:194px; height: 204px;" class="thumb" src="{{ post.image.url }}" alt="썸네일 이미지"></div>      
                 <div class="title"><p>{{post.title}}</p></div>
                 <div class="title"><p>{{post.dt_created}}</p></div>
