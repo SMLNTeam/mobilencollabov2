@@ -1,53 +1,46 @@
 {% extends '../drawing/base.html' %}
 {% load static %}
 
-{% block body %}
-{% block css %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'drawing/css/posts/myhome-sty.css' %}">
 <link rel="stylesheet" href="{% static 'drawing/css/posts/post_list.css' %}">
-{% endblock css %}
+{% endblock head %}
 
 
 
 
-{% block content %}
-<div class='btn_post'>
-    <a href={%url 'post-create'%}>글쓰기</a>
+{% block body %}
+<div class='btn_post' style="text-align: right; margin-right:110px; margin-bottom:50px;">
+    <a style="background-color:pink; width:70px; height:25px; border-radius: 10px; display: inline-block; text-align: center; text-decoration: none; color: white;" href={%url 'post-create'%}>글쓰기</a>
 </div>
-
+<div class="main_list" style="height:1200px; min-height: 400px;">
 {% if  page_obj.object_list%}
-    <div class="post_container">
+    <div class="list_start">
         {% for post in page_obj.object_list %}
-            <div class="post"><a href={% url 'post-detail' post.id %}>         
-                <img class="thumb" src="{{ post.image.url }}" alt="썸네일 이미지">
-                <h2 class="title">{{post.title}}</h2>
-                <p class="date">{{post.dt_created}}</p>
-                <p class="text">{{post.content|slice:"100"}}</p>
+            <div class="total"><a href={% url 'post-detail' post.id %} style="text-decoration: none; color:black">   
+                <div class="list_detail_odd"><img style="width:194px; height: 204px;" class="thumb" src="{{ post.image.url }}" alt="썸네일 이미지"></div>      
+                <div class="title"><p>{{post.title}}</p></div>
+                <div class="title"><p>{{post.dt_created}}</p></div>
             </a></div>  
         {% endfor %}      
-    </div>
-    <div class="paging">
-        {% if page_obj.has_previous %}
-            <a href="?page=1" class="first">first</a>
-            <a href="?page={{page_obj.previous_page_number}}" class="prev">prev</a>
-        {% endif %}
-        <span>
-            <p>{{page_obj.number}} of {{page_obj.paginator.num_pages}}</p>
-        </span>
-            
-        {% if page_obj.has_next %}
-            <a href="?page={{page_obj.next_page_number}}" class="next">next</a>
-            <a href="?page={{page_obj.paginator.num_pages}}" class="last">last</a>
-        {% endif %}
     </div>
 {% else %}
     <div class="blank">
         <p>보여줄 글이 없어요.<br>첫 글을 작성해보면 어떨까요?</p>
-
     </div>
 {% endif %}
-
-{% endblock content %}
-
-
+</div>
+<div class="paging" style="height: 100px;">
+    {% if page_obj.has_previous %}
+        <a href="?page=1" class="first">first</a>
+        <a href="?page={{page_obj.previous_page_number}}" class="prev">prev</a>
+    {% endif %}
+    <p style="color: white; text-align: center;">{{page_obj.number}} of {{page_obj.paginator.num_pages}}</p>
+        
+    {% if page_obj.has_next %}
+        <a href="?page={{page_obj.next_page_number}}" class="next">next</a>
+        <a href="?page={{page_obj.paginator.num_pages}}" class="last">last</a>
+    {% endif %}
+</div>
 {% endblock body %}
 

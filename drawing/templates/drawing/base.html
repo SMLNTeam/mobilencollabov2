@@ -36,9 +36,8 @@
             <div class="top-logo"><a href="{% url 'index' %}" ><img src="{% static 'drawing/img/SMLN_logo.jpg' %}"></a></div>
             <div>
                 <ul class="top-menu">
-                   
-                    <li><a href="{% url 'profile' %}" >{{user}}님!</a></li>
                     <a href="{% url 'profile' %}"><img src="{{ user.profile_pic.url}}"  width='30' height='30' style="border-radius:16px; display: inline-block;" ></a>
+                    <li><a href="{% url 'profile' %}" >{{user}}</a></li>
                     <li><a href="logout">로그아웃</a></li>
                 </ul>
             </div>
@@ -46,8 +45,8 @@
     </header>
     {% block body %}
     {% endblock body %}
-    <footer>
-        COPYRIGHT (c) 모바일앱협동 ALL RIGHTS RESERVED
-    </footer>
 </body>
+<footer>
+    COPYRIGHT (c) 모바일앱협동 ALL RIGHTS RESERVED
+</footer>
 </html>

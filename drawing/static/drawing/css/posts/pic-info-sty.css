@@ -1,0 +1,91 @@
+.logo {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: auto;
+    float: left;
+}
+
+.menu {
+    height: 20px;
+    float: right;
+    margin-right: 100px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.menu li {
+    list-style-type: none;
+    float: left;
+}
+
+.menu a {
+    color: white;
+    padding: 0 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.top {
+    width: auto;
+    margin: 0 0 0 0;
+    height: 100px;
+}
+
+.image {
+    width: 664px;
+    height: 324px;
+	border: 2px solid;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    background: #F6F6F6;
+    border-color: #F6F6F6;
+    border-radius: 3px;
+
+}
+
+.gobring {
+    border-radius: 30px;
+    background-color: #F3D7D8;
+    border: #F3D7D8;
+    width: 150px;
+    height: 40px;
+    margin-top: 20%;
+}
+
+.text-field-1 {
+    border-radius: 5px;
+    width: 480px;
+    height: 51px;
+    margin-right: 10px;
+    background: none;
+    border: 3px solid;
+    border-color: #F3D7D8;
+    
+}
+
+.text-field-2 {
+    border-radius: 5px;
+    width: 154px;
+    height: 51px;
+    background: none;
+    border: 3px solid;
+    border-color: #F3D7D8;
+}
+
+.text-field-3 {
+    border-radius: 5px;
+    width: 660px;
+    height: 246px;
+    background: none;
+    border: 3px solid;
+    border-color: #F3D7D8;
+}
+
+.info {
+    text-align: center;
+}
+
+.info2 {
+    margin-top: 10px;
+}
