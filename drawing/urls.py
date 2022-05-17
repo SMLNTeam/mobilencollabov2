@@ -12,6 +12,8 @@ urlpatterns = [
     path("set-profile/", views.ProfileSetView.as_view(), name="profile-set"), 
     path("edit-profile/",views.ProfileUpdateView.as_view(), name="profile-update"),
 
+    path('logout/', views.logout, name = 'logout'),
+
     path('posts/',views.PostListView.as_view(),name='post-list'),
     path('posts/new',views.PostCreateView.as_view(),name='post-create'),
     path('posts/<int:pk>',views.PostDetailView.as_view(),name='post-detail'),

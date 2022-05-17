@@ -38,7 +38,7 @@
                 <ul class="top-menu">
                     <a href="{% url 'profile' %}"><img src="{{ user.profile_pic.url}}"  width='30' height='30' style="border-radius:16px; display: inline-block;" ></a>
                     <li><a href="{% url 'profile' %}" >{{user}}</a></li>
-                    <li><a href="logout">로그아웃</a></li>
+                    <li><a href="{% url 'logout' %}">로그아웃</a></li>
                 </ul>
             </div>
         </div>
