@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import (
     CreateView,ListView,DetailView,UpdateView,DeleteView,RedirectView,TemplateView
 )
@@ -6,6 +6,7 @@ from allauth.account.views import PasswordChangeView
 from django.urls import reverse
 from drawing.forms import ProfileForm
 from drawing.models import User
+from django.contrib import auth
 from .models import Post
 from .forms import PostForm
 from braces.views import LoginRequiredMixin
@@ -49,7 +50,10 @@ class ProfileUpdateView(UpdateView):
         return reverse("profile")
 
 
-
+#logout
+def logout(request):
+    auth.logout(request)
+    return redirect('index')
 
 
 #post
