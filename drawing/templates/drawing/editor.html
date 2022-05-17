@@ -4,19 +4,73 @@
 {% block body %}
 <div class="body-container">
   <div class="tui-image-editor-controls">
+
     <div class="menu-container" id="menu-container-1">
       <ul class="menu">
+
         <li class="menu-item2  input-wrapper">
-          <input type="file" accept="image/*" id="input-image-file" />
+          <input type="file" accept="image/*" id="input-image-file" 
+          onc/>
           <i style="color: white; font-size:30px;" class="fa-solid fa-upload"><div style="display:inline-block; font-size:18px;">Upload</div>
            
           </i>
         </li>
-        <li class="menu-item2 border" id="btn-download" >
-          <i style="color: white; font-size:30px;" class="fa-solid fa-download"><div style="display:inline-block; font-size:18px;"> Download</div>
-          </i></li>
+        <script>
+          /*
+            var confirm = function(msg, title, resvNum) {
+            swal({
+              title : title,
+              text : msg,
+              type : "warning",
+              showCancelButton : true,
+              confirmButtonClass : "btn-danger",
+              confirmButtonText : "예",
+              cancelButtonText : "아니오",
+              closeOnConfirm : false,
+              closeOnCancel : true
+            }, function(isConfirm) {
+              if (isConfirm) {
+                swal('', '예약이 승인되었습니다.', "success");
+              }else{
+                swal('', '예약이 거부되었습니다.', "failed");
+              }
+        
+            });
+          }
+          function Confirm() {
+            confirm('', '승인할까요?');
+          }
+          */
+          function Confirm(){
+            var result = confirm("다운로드가 완료되었습니다. 게시판에서 이미지를 게시해보시겠어요?");
+        
+            if(result)
+            {
+                location.href="/posts"
+            }
+            else
+            {
+                
+            }
+          }
+           
+
+        </script>
+        <li class="menu-item2 border" id="btn-download" onclick="Confirm();">        
+         
+          <i style="color: white; font-size:30px;" class="fa-solid fa-download">
+            <div style="display:inline-block; font-size:18px;"> 
+              Download
+            </div>
+          </i>
+  
+        </li>
+
+      
+        
       </ul>
     </div>
+    
     <div class="menu-container" id="menu-container-2">
       <ul id="main_menu">
        
