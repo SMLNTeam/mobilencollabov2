@@ -9,14 +9,14 @@
     {% endblock css %}
 
     {% block content %}
-    <div class="confirm">
-    <p class="title">[{{post.title}}]</p>
-    <p>삭제하시겠습니까?</p>
-    <form method="POST">{% csrf_token %}
-        <div class="confirm_btn">
-            <input type="submit" value="삭제하기">
-        </div>
-    </form>
+    <div class="confirm" style="margin: 0 auto; text-align: center;">
+        <p class="title" style="font-size: 30px; color:white;">해당 [{{post.title}}] 글을</p>
+        <p style="font-size: 30px; color:white;">삭제하시겠습니까?</p>
+        <form method="POST">{% csrf_token %}
+            <div class="confirm_btn">
+                <input style="width:500px; height: 50px; background-color: pink; color: white; font-size: 20px; border-radius: 10px;" type="submit" value="삭제하기">
+            </div>
+        </form>
     </div>
     {% endblock content %}
 

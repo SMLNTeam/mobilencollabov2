@@ -1,59 +1,87 @@
 {% extends '../drawing/base.html' %}
 {% load static %}
 
+{% block head %}
+<style>
+    .titleform > input{
+        width: 500px;
+        height: 40px;
+        border: solid 5px pink;
+        border-radius: 10px;
+        padding: 5px;
+    }
+    .file-content > input{
+        width: 500px;
+        height: 25px;
+        border: solid 5px pink;
+        border-radius: 10px;
+        background-color: white;
+        padding: 5px;
+    }
+    .createcontent > textarea{
+        width: 500px;
+        height: 300px;
+        border: solid 5px pink;
+        border-radius: 10px;
+        background-color: white;
+        padding: 5px;
+    }
+    .submit > input{
+        width: 520px;
+        height: 50px;
+        border-radius: 10px;
+        padding: 5px;
+        background-color: pink;
+        color: white;
+        font-size: 20px;
+    }
+</style>
+{% endblock head %}
+
 {% block body %}
-    
-{% block css %}
-<link rel="stylesheet" href="{% static 'posts/css/post_form.css'%}">
-{% endblock css %}
-
-{% block post_header %}
-<div class="container">
-    <h1>글쓰기</h1>
-</div>
-{% endblock post_header %}
-
-{% block content %} 
-<form method='post' enctype="multipart/form-data">
-    {% csrf_token %}
-    <div class="submit">
-        <input type="submit" value="작성완료"> 
-    </div>
-    <div class="editor">
-        <p>{{form.title}}</p>
-        {% for error in form.title.errors %}
-            <p class="error">{{error}}</p>
-        {% endfor %}
-    
-        
-        <div class="file">
-            <div class="podo-input file-input">
-                {% if post.image %}
-                    <img class="file-thumb" src="{{ post.image.url }}">
-                {% endif %}
-                <div class="file-content">
-                    {{ form.image }}
-                </div>
+<div class="create-content" style="margin: 0 auto; text-align: center;">
+    <form method='post' enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="editor">
+            <div class="title">
+                <p class="titleform">{{form.title}}</p>
+                {% for error in form.title.errors %}
+                    <p class="error">{{error}}</p>
+                {% endfor %}
             </div>
-            {% for error in form.image.errors %}
-                <div class="error-message">{{ error }}</div>
-            {% endfor %}
+        
+
+            <div class="file">
+                <div class="podo-input file-input">
+                    {% if post.image %}
+                        <img class="file-thumb" src="{{ post.image.url }}">
+                    {% endif %}
+                    <div class="file-content">
+                        {{ form.image }}
+                    </div>
+                </div>
+                {% for error in form.image.errors %}
+                    <div class="error-message">{{ error }}</div>
+                {% endfor %}
+            </div>
+        
+        
+
+            <div class="content">
+                <p class="createcontent">{{form.content}}</p>
+                {% for error in form.content.errors %}
+                    <p class="error">{{error}}</p>
+                {% endfor %}
+            </div>
+            <div class="submit">
+                <input type="submit" value="작성완료"> 
+            </div>
         </div>
-       
-       
-
-
-        <p>{{form.content}}</p>
-        {% for error in form.content.errors %}
-            <p class="error">{{error}}</p>
-        {% endfor %}
-          
-    </div>
-</form>
+    </form>
+</div>
 <div class='btn_back'>
     <a href="{%url 'post-list'%}">돌아가기</a>
 </div>
-{% endblock content %}   
 {% endblock body %}
 
 
