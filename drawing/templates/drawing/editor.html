@@ -16,31 +16,18 @@
           </i>
         </li>
         <script>
-          /*
-           var result = confirm("다운로드가 완료되었습니다. 게시판에서 이미지를 게시해보시겠어요?");
-        
-            if(result)
-            {
-                location.href="/posts"
-            }
-            else
-            {
-                
-            }
-          */
+          
           function Confirm(){
             Swal.fire({
               title: '다운로드가 완료되었습니다.',
               text: '게시판에서 이미지를 올려보세요!',
               icon: 'success',
-              showCancelButton: true, // cancel버튼 보이기. 기본은 원래 없음
-             
-              confirmButtonText: '게시판으로 이동하기', // confirm 버튼 텍스트 지정
-              cancelButtonText: '취소', // cancel 버튼 텍스트 지정
-              
+              showCancelButton: true, 
+            
+              confirmButtonText: '게시판으로 이동하기', 
+              cancelButtonText: '취소', 
               }).then(result => {
-              // 만약 Promise리턴을 받으면,
-              if (result.isConfirmed) { // 만약 모달창에서 confirm 버튼을 눌렀다면
+              if (result.isConfirmed) { 
                 location.href="/posts"
               }
               });
