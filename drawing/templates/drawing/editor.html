@@ -17,32 +17,7 @@
         </li>
         <script>
           /*
-            var confirm = function(msg, title, resvNum) {
-            swal({
-              title : title,
-              text : msg,
-              type : "warning",
-              showCancelButton : true,
-              confirmButtonClass : "btn-danger",
-              confirmButtonText : "예",
-              cancelButtonText : "아니오",
-              closeOnConfirm : false,
-              closeOnCancel : true
-            }, function(isConfirm) {
-              if (isConfirm) {
-                swal('', '예약이 승인되었습니다.', "success");
-              }else{
-                swal('', '예약이 거부되었습니다.', "failed");
-              }
-        
-            });
-          }
-          function Confirm() {
-            confirm('', '승인할까요?');
-          }
-          */
-          function Confirm(){
-            var result = confirm("다운로드가 완료되었습니다. 게시판에서 이미지를 게시해보시겠어요?");
+           var result = confirm("다운로드가 완료되었습니다. 게시판에서 이미지를 게시해보시겠어요?");
         
             if(result)
             {
@@ -52,6 +27,24 @@
             {
                 
             }
+          */
+          function Confirm(){
+            Swal.fire({
+              title: '다운로드가 완료되었습니다.',
+              text: '게시판에서 이미지를 올려보세요!',
+              icon: 'success',
+              showCancelButton: true, // cancel버튼 보이기. 기본은 원래 없음
+             
+              confirmButtonText: '게시판으로 이동하기', // confirm 버튼 텍스트 지정
+              cancelButtonText: '취소', // cancel 버튼 텍스트 지정
+              
+              }).then(result => {
+              // 만약 Promise리턴을 받으면,
+              if (result.isConfirmed) { // 만약 모달창에서 confirm 버튼을 눌렀다면
+                location.href="/posts"
+              }
+              });
+              
           }
            
 
