@@ -4,19 +4,53 @@
 {% block body %}
 <div class="body-container">
   <div class="tui-image-editor-controls">
+
     <div class="menu-container" id="menu-container-1">
       <ul class="menu">
+
         <li class="menu-item2  input-wrapper">
-          <input type="file" accept="image/*" id="input-image-file" />
-          <i style="color: white; font-size:30px;" class="fa-solid fa-upload"><div style="display:inline-block; font-size:18px; margin-left: 5px;">Upload</div>
+          <input type="file" accept="image/*" id="input-image-file" 
+          onc/>
+          <i style="color: white; font-size:30px;" class="fa-solid fa-upload"><div style="display:inline-block; font-size:18px;">Upload</div>
            
           </i>
         </li>
-        <li class="menu-item2 border" id="btn-download" >
-          <i style="color: white; font-size:30px;" class="fa-solid fa-download"><div style="display:inline-block; font-size:18px; margin-left: 5px;"> Download</div>
-          </i></li>
+        <script>
+          
+          function Confirm(){
+            Swal.fire({
+              title: '다운로드가 완료되었습니다.',
+              text: '게시판에서 이미지를 올려보세요!',
+              icon: 'success',
+              showCancelButton: true, 
+            
+              confirmButtonText: '게시판으로 이동하기', 
+              cancelButtonText: '취소', 
+              }).then(result => {
+              if (result.isConfirmed) { 
+                location.href="/posts"
+              }
+              });
+              
+          }
+           
+
+        </script>
+        <li class="menu-item2 border" id="btn-download" onclick="Confirm();">        
+         
+          <i style="color: white; font-size:30px;" class="fa-solid fa-download">
+            <div style="display:inline-block; font-size:18px;"> 
+              Download
+            </div>
+          </i>
+  
+        </li>
+
+      
+        
       </ul>
     </div>
+    
     <div class="menu-container" id="menu-container-2">
       <ul id="main_menu">
        
