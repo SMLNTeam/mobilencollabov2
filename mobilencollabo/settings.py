@@ -145,11 +145,13 @@ AUTHENTICATION_BACKENDS = [
 ACCOUNT_SIGNUP_REDIRECT_URL = 'profile-set'
 #로그인시 index로 이동
 LOGIN_REDIRECT_URL = 'index'
-LOGOUT_REDIRECT_URL = 'index'
 #즉시 로그아웃
 ACCOUNT_LOGOUT_ON_GET = True
+#로그인시 username, email가능
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+#이메일 인증 필요하도록
 ACCOUNT_EMAIL_REQUIRED = True
+#로그인 세션 정보 기억하기
 ACCOUNT_SESSION_REMEMBER = True
 #session time = 1 hour
 SESSION_COOKIE_AGE = 3600
