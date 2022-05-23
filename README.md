@@ -1,6 +1,7 @@
 # Team Logo
 <img width="136" alt="image" src="https://user-images.githubusercontent.com/67581495/169749055-6e357244-fe88-45ff-8f7b-a10836c277f3.png">
-# Setup
+
+# 1. Setup
 
 ```sh
 # 0. clone fork project
@@ -20,10 +21,10 @@ source myvenv/bin/activate
 python manage.py runserver
 ```
 
-# 4. OverView
+# 2. OverView
 SMLN 이미지 에디터는 GUI를 이용한 일명 위지윅(WYSIWYG) 방식의 이미지 에디터를 구현하여 완성한 작업물들을 사이트 내에서 게시판을 통해 공유해 상호작용이 이루어질 수 있게 하여 이미지 편집의 진입장벽을 낮추는 것을 목표로 구현한 서비스입니다.
 
-# 5. Service Detail
+# 3. Service Detail
 1. Home
 <img width="1432" alt="image" src="https://user-images.githubusercontent.com/67581495/169748129-a497cc90-293e-4338-8a29-223499ec2b83.png">
 
@@ -33,7 +34,7 @@ SMLN 이미지 에디터는 GUI를 이용한 일명 위지윅(WYSIWYG) 방식의
 3. Post
 <img width="1277" alt="image" src="https://user-images.githubusercontent.com/67581495/169748821-6b650835-8d8c-4019-aa33-626a7b6d032f.png">
 
-# Tech stack
+# 4. Tech stack
 
 ### Backend
 
