@@ -15,13 +15,13 @@
 </div>
 <div class="content" style="margin: 0 auto; text-align: center; width: 500px; background-color: white; border-radius: 10px; border: solid 5px pink;">
     <p class="text">{{post.content|linebreaksbr}}</p>
-    <p class="date_md">수정일 <span>{{post.dt_modified}}</span></p>
+    <p class="date_md">수정일 : {{post.dt_modified}}</p>
 </div>
 <div class="btn" style="margin: 0 auto; text-align:center;">
-    <div class="btn_list" style="width: 500px; background-color:pink; display: inline-block; border-radius: 5px; margin-top: 20px;"><a style="text-decoration: none; color: white;" href={% url 'post-list'%}>목록으로</a></div>
+    <div class="btn_list" style="padding: 0 250px; background-color:pink; display: inline-block; border-radius: 5px; margin-top: 20px; height: 40px;line-height: 40px;"><a style="text-decoration: none; color: white;" href={% url 'post-list'%}>목록으로</a></div>
     <div class="right-btn">
-        <div class="btn_modify" style="width: 250px; background-color:pink; display: inline-block; border-radius: 5px; margin-top: 20px;"><a style="text-decoration: none; color: white;" href="{% url 'post-update' post.id %}">수정하기</a></div>
-        <div class="btn_delete" style="width: 250px; background-color:pink; display: inline-block; border-radius: 5px; margin-top: 20px;"><a style="text-decoration: none; color: white;" href="{% url 'post-delete' post.id %}">삭제하기</a></div>
+        <div class="btn_modify" style="padding: 0 110px; background-color:pink; display: inline-block; border-radius: 5px; margin-top: 20px; height: 40px;line-height: 40px;"><a style="text-decoration: none; color: white;" href="{% url 'post-update' post.id %}">수정하기</a></div>
+        <div class="btn_delete" style="padding: 0 110px; background-color:pink; display: inline-block; border-radius: 5px; margin-top: 20px; height: 40px;line-height: 40px;"><a style="text-decoration: none; color: white;" href="{% url 'post-delete' post.id %}">삭제하기</a></div>
     </div>
 </div>
 
