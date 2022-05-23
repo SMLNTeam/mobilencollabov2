@@ -18,14 +18,28 @@
     <link rel="stylesheet" type="text/css" href="{% static 'drawing/styles/theme.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'drawing/styles/style.css' %}">
     <link rel="stylesheet" href="{% static 'drawing/css/page.css' %}">
+    <link rel="stylesheet" href="{% static 'drawing/css/home.css' %}">
 </head>
 
 <body bgcolor = "#393939" style="margin:0px;">
   <header>
-      <div class="top">
-          <div class="logo"><a href="{% url 'index' %}"><img src="{% static 'drawing/img/SMLN_마크2.jpg' %}"></a></div>
-      </div>
-  </header>
+    <div class="top">
+        <div class="top-logo"><a href="{% url 'index' %}"><img src="{% static 'drawing/img/SMLN_logo.jpg' %}"></a></div>
+
+        <div>
+            <ul class="top-menu">
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'profile' %}" >안녕하세요, {{user}}님!</a></li>
+                <a href="{% url 'profile' %}"><img src="{{ user.profile_pic.url}}"  width='30' height='30' style="border-radius:16px; display: inline-block;" ></a>
+                <li><a href="logout">로그아웃</a></li>
+                {% else %}
+                <li><a href="signup">회원가입</a></li>
+                <li><a href="login">로그인</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</header>
 
   <div class="account-background">
     <main class="profile-form">
@@ -43,7 +57,7 @@
         </div>
 
         <div class="content">
-          {{ form.intro|add_class:"cp-input"|add_error_class:"error"|attr:"placeholder:자신을 소개해 주세요!" }}
+          {{ form.intro|add_class:"cp-inputt"|add_error_class:"error"|attr:"placeholder:자신을 소개해 주세요!" }}
           {% for error in form.intro.errors %}
             <div class="error-message">{{ error }}</div>
           {% endfor %}

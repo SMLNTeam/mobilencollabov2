@@ -51,21 +51,20 @@
     </header>
 
 
-
-        <h1 class="title" style="color: white;">Profile</h1>
-        
-
-        <div><img src="{{ user.profile_pic.url}}"  width='100' height='100' style="border-radius:16px; display: inline-block;" ></div>
-      
-        <h1 class="username">닉네임: {{ user}}</h1>
+    <br><br>
+        <h1 class="title" style="color: white; text-align: center;">Profile</h1>      
+        <div class="profile-pic" style="text-align: center;"><img src="{{ user.profile_pic.url}}"  width='255' height='255' style="border-radius:16px; display: inline-block;" ></div>
+        <h1 class="username" style="color: #F3D7D8; text-align: center;">{{ user}} 님</h1>
+        <div class="content" style="margin: 0 auto; text-align: center; width: 320px; background-color: white; border-radius: 10px; border: solid 5px pink;">
             {% if user.intro %}
-            <div>
-              <p class="cp-chip intro">소개문구: {{ user.intro}}</p>
-            </div>
+            <p class="cp-chip-intro" style="color:black;">{{ user.intro}}</p>
+            {% else %}
+            <p class="cp-chip-intro" style="color:black;">소개문구가 없습니다. 소개문구를 작성해주세요!</p>
             {% endif %}
-            <a href="{% url 'profile-update' %}"><button class="gologin" type="submit" >프로필 수정</button></a>
-            <a href="{% url 'account_change_password' %}"><button class="gologin" type="submit">비밀번호 변경</button></a>
-
+        </div>
+        <a style="text-align: center;" href="{% url 'profile-update' %}"><button class="gologin" type="submit" >프로필 수정</button></a>
+        <a style="text-align: center;" href="{% url 'account_change_password' %}"><button class="gologin" type="submit"style="text-align: center;">비밀번호 변경</button></a>
+<br><br><br>
   
 </body>
 </html>

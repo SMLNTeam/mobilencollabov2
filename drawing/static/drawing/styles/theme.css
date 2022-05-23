@@ -203,6 +203,20 @@ textarea.cp-input,
     margin-top: 10px;
 }
 
+input.cp-inputt,
+textarea.cp-inputt,
+.cp-inputt input {
+    width: 440px;
+    font-size: 15px;
+    letter-spacing: -0.3px;
+    padding: 10px;
+    border: 1px solid var(--input-border);
+    background-color: var(--input-background);
+    outline: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
 input.cp-input:focus,
 textarea.cp-input:focus,
 .cp-input input:focus {
