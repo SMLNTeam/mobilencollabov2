@@ -64,7 +64,7 @@ class IndexRedirectView(RedirectView):
 class PostListView(LoginRequiredMixin, ListView):
     model=Post
     ordering=['-dt_created'] #정렬 최신순(-안붙일 경우 오래된 순)
-    paginate_by=6
+    paginate_by=9
     template_name = "posts/post_list.html"
 
 class PostDetailView(LoginRequiredMixin,DetailView):
@@ -84,7 +84,7 @@ class PostCreateView(LoginRequiredMixin,CreateView):
 class PostUpdateView(LoginRequiredMixin,UpdateView):
     model=Post
     form_class=PostForm
-    template_name = "posts/post_form.html"
+    template_name = "posts/post_form2.html"
     def get_success_url(self) :
         return reverse('post-detail',kwargs={'pk':self.object.id})
 
