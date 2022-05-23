@@ -211,6 +211,8 @@ h3.list {
     flex-grow: 1;
 }
 
+
+/*
 .account-background::before {
     content: " ";
     position: absolute;
@@ -219,12 +221,12 @@ h3.list {
     right: 0;
     bottom: 0;
     z-index: -1;
-    background-image: url("../assets/main-fg.svg");
+    /*background-image: url("../assets/main-fg.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: top;
     opacity: 0.5;
-}
+}*/
 
 .account {
     margin: 200px auto;
