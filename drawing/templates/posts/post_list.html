@@ -32,14 +32,14 @@
 </div>
 <div class="paging" style="height: 100px;">
     {% if page_obj.has_previous %}
-        <a href="?page=1" class="first">first</a>
+
         <a href="?page={{page_obj.previous_page_number}}" class="prev">prev</a>
     {% endif %}
-    <p style="color: white; text-align: center;">{{page_obj.number}} of {{page_obj.paginator.num_pages}}</p>
+    <p >{{page_obj.number}} of {{page_obj.paginator.num_pages}}</p>
         
     {% if page_obj.has_next %}
         <a href="?page={{page_obj.next_page_number}}" class="next">next</a>
-        <a href="?page={{page_obj.paginator.num_pages}}" class="last">last</a>
+   
     {% endif %}
 </div>
 {% endblock body %}

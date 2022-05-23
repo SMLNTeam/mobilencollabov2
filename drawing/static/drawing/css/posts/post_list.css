@@ -6,3 +6,17 @@ body{
     list-style: none;
     color:white;
 }
+
+.paging{
+    text-align: center;
+}
+.paging p{
+    color: white; 
+    display: inline;
+    
+}
+.paging a{
+    color:white;
+    text-decoration: none;
+    text-align: center;
+}
